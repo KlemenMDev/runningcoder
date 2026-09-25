@@ -1,49 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Running Coder // Launching Soon</title>
-    <!-- Najnovejši stabilen Tailwind skript za leto 2026 -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://googleapis.com" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'JetBrains Mono', monospace;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Running Coder — running, code and data. Optimizing the human engine one build at a time.">
+  <title>Running Coder // Optimizing the Human Engine</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#06101E; --panel:#0B1626; --panel2:#121826; --accent:#29B6F6; --line:#1B2B3F; --muted:#8391A5; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'JetBrains Mono',monospace; background:var(--bg); }
+    .grid-bg { background-image:linear-gradient(rgba(41,182,246,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(41,182,246,.035) 1px,transparent 1px); background-size:42px 42px; }
+    .glow { text-shadow:0 0 30px rgba(41,182,246,.28); }
+    .card { background:linear-gradient(145deg,rgba(18,24,38,.82),rgba(7,17,31,.9)); border:1px solid var(--line); }
+    .card:hover { border-color:rgba(41,182,246,.45); transform:translateY(-2px); }
+    .scan { position:relative; overflow:hidden; }
+    .scan:after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(transparent 50%,rgba(41,182,246,.018) 50%); background-size:100% 4px; }
+  </style>
 </head>
-<!-- Točna temno modra barva iz tvojega logotipa -->
+<body class="text-white min-h-screen grid-bg scan selection:bg-[#29B6F6] selection:text-[#06101E]">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <img src="logo.png" alt="Running Coder" class="h-16 md:h-20 w-auto object-contain">
+    <nav class="hidden md:flex gap-7 text-[11px] uppercase tracking-[.18em] text-slate-500">
+      <a href="#system" class="hover:text-[#29B6F6] transition">system</a>
+      <a href="#build" class="hover:text-[#29B6F6] transition">build</a>
+      <a href="#logs" class="hover:text-[#29B6F6] transition">logs</a>
+    </nav>
+    <div class="text-[10px] uppercase tracking-[.18em] text-slate-600">v1.0 // online</div>
+  </header>
 
-<body class="bg-[#06101E] text-white min-h-screen flex flex-col justify-between p-6">
-
-    <!-- Glava strani z tvojim logotipom -->
-    <header class="max-w-6xl mx-auto w-full flex justify-between items-center">
-        <!-- Slika logotipa, nastavljena na višino 16 enot (h-16), da je ravno prav velika -->
-        <img src="logo.png" alt="Running Coder Logo" class="h-24 w-auto object-contain">
-        <div class="text-xs text-gray-550 uppercase tracking-widest">// DEPLOYED_VIA_GITHUB</div>
-    </header>
-
-    <main class="text-center my-auto">
-        <div class="text-xs uppercase tracking-widest text-gray-500 mb-2">// STATUS: INITIALIZING_SYSTEM</div>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Optimizing the <span class="text-[#29B6F6]">Human Engine</span>
+  <main>
+    <section class="max-w-6xl mx-auto px-6 min-h-[72vh] flex items-center py-16">
+      <div class="max-w-4xl">
+        <div class="text-[#29B6F6] text-xs uppercase tracking-[.25em] mb-5">// RUNNING + CODE + DATA</div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-[-.06em] leading-[.98] mb-7">
+          Optimizing the<br><span class="text-[#29B6F6] glow">Human Engine.</span>
         </h1>
-        <p class="text-gray-400 text-sm md:text-base max-w-md mx-auto mb-6 leading-relaxed">
-            Merging running science with software engineering. The roadmap to a Sub-3h Marathon and an AI-powered
-            coaching app is currently compiling.
+        <p class="text-slate-400 max-w-2xl text-sm md:text-base leading-7 mb-9">
+          Building a faster runner and a better developer through consistency, data and iteration.
+          Training the body. Debugging the process. Shipping the work.
         </p>
-        <div
-            class="inline-block bg-[#121826] border border-gray-800 text-xs px-4 py-2 rounded-full text-[#29B6F6] animate-pulse">
-            launching_soon.exe ... 0%
+        <div class="flex flex-wrap gap-3">
+          <a href="#system" class="bg-[#29B6F6] text-[#06101E] font-bold text-xs px-5 py-3 rounded hover:brightness-110 transition">RUN_SYSTEM()</a>
+          <a href="#logs" class="border border-[#1B2B3F] text-slate-300 text-xs px-5 py-3 rounded hover:border-[#29B6F6]/60 transition">VIEW_LOGS</a>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <footer class="text-center text-xs text-gray-600">
-        &copy; 2026 runningcoder.dev // Follow the rehab & coding on social media.
-    </footer>
+    <section id="system" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#142236]">
+      <div class="flex items-end justify-between mb-8">
+        <div><div class="text-[#29B6F6] text-[10px] tracking-[.22em] mb-2">// SYSTEM_STATUS</div><h2 class="text-2xl md:text-3xl font-bold">Three processes. One build.</h2></div>
+        <span class="hidden md:block text-[10px] text-slate-600">STATUS: ACTIVE</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <article class="card rounded-lg p-6 transition duration-300"><div class="text-[#29B6F6] text-xs mb-8">01 / RUNNING.LOG</div><h3 class="text-xl font-bold mb-3">Run</h3><p class="text-slate-500 text-xs leading-6">Marathon training, race preparation, recovery and the lessons hidden inside the miles.</p><div class="mt-7 text-[10px] text-emerald-400">● PROCESS_RUNNING</div></article>
+        <article class="card rounded-lg p-6 transition duration-300"><div class="text-[#29B6F6] text-xs mb-8">02 / CODE.LOG</div><h3 class="text-xl font-bold mb-3">Code</h3><p class="text-slate-500 text-xs leading-6">Learning Python, web development and building useful things one commit at a time.</p><div class="mt-7 text-[10px] text-emerald-400">● PROCESS_RUNNING</div></article>
+        <article class="card rounded-lg p-6 transition duration-300"><div class="text-[#29B6F6] text-xs mb-8">03 / DATA.RUN</div><h3 class="text-xl font-bold mb-3">Measure</h3><p class="text-slate-500 text-xs leading-6">Connecting training and technology through data, experiments and performance analysis.</p><div class="mt-7 text-[10px] text-emerald-400">● PROCESS_RUNNING</div></article>
+      </div>
+    </section>
 
+    <section id="build" class="max-w-6xl mx-auto px-6 py-20">
+      <div class="card rounded-lg p-6 md:p-9 grid md:grid-cols-[1fr_1.2fr] gap-10">
+        <div><div class="text-[#29B6F6] text-[10px] tracking-[.22em] mb-3">// CURRENT_BUILD</div><h2 class="text-3xl font-bold mb-4">Build in public.</h2><p class="text-slate-500 text-xs leading-6">No expert act. Just the real process: learning, training, failing, adapting and improving.</p></div>
+        <div class="space-y-5 text-xs">
+          <div><div class="flex justify-between mb-2"><span>MARATHON_ENGINE</span><span class="text-[#29B6F6]">BUILDING</span></div><div class="h-1 bg-[#07111F]"><div class="h-1 bg-[#29B6F6] w-[68%]"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span>PYTHON_SKILLS</span><span class="text-[#29B6F6]">COMPILING</span></div><div class="h-1 bg-[#07111F]"><div class="h-1 bg-[#29B6F6] w-[38%]"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span>RUNNING_DATA_PROJECT</span><span class="text-slate-500">QUEUED</span></div><div class="h-1 bg-[#07111F]"><div class="h-1 bg-slate-700 w-[12%]"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="logs" class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-[#29B6F6] text-[10px] tracking-[.22em] mb-3">// LATEST_LOGS</div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">Document the process.</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="card rounded-lg p-5"><span class="text-[10px] text-[#29B6F6]">RUNNING.LOG</span><h3 class="font-bold mt-4 mb-2">Long run → lesson</h3><p class="text-[11px] text-slate-500 leading-5">Training notes, fueling, pacing and what changes next.</p></div>
+        <div class="card rounded-lg p-5"><span class="text-[10px] text-[#29B6F6]">CODE.LOG</span><h3 class="font-bold mt-4 mb-2">Learn → build</h3><p class="text-[11px] text-slate-500 leading-5">From Python fundamentals toward real running tools.</p></div>
+        <div class="card rounded-lg p-5"><span class="text-[10px] text-[#29B6F6]">DEBUG</span><h3 class="font-bold mt-4 mb-2">Failure → feedback</h3><p class="text-[11px] text-slate-500 leading-5">What broke, why it broke and how the next build improves.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-6xl mx-auto w-full px-6 py-10 border-t border-[#142236] flex flex-col md:flex-row gap-3 justify-between text-[10px] text-slate-600">
+    <span>© 2026 RUNNINGCODER.DEV</span><span>RUN // CODE // MEASURE // REPEAT</span>
+  </footer>
 </body>
-
 </html>
